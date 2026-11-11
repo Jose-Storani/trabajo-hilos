@@ -1,8 +1,9 @@
 import java.io.File;
 
 public class Buscador {
-
+    public static boolean encontrado = false; 
     public static void buscar(File carpeta, String nombre) {
+        
         File[] elementos = carpeta.listFiles(); 
 
         if (elementos == null) {
@@ -19,6 +20,7 @@ public class Buscador {
                 buscar(elemento, nombre); // entra en la subcarpeta
             } else if (elemento.getName().equals(nombre)) {
                 System.out.println(elemento.getAbsolutePath());
+                encontrado = true;
             }
 
     }
