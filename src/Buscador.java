@@ -10,11 +10,16 @@ public class Buscador {
         }
 
         for (File elemento : elementos) {
-            if (elemento.isDirectory()) {
+            revisar(elemento,nombre);
+        }
+    }
+
+    public static void revisar(File elemento, String nombre){
+      if (elemento.isDirectory()) {
                 buscar(elemento, nombre); // entra en la subcarpeta
             } else if (elemento.getName().equals(nombre)) {
                 System.out.println(elemento.getAbsolutePath());
             }
-        }
+
     }
 }
